@@ -14,45 +14,67 @@ Tên Kịch Bản: Kiểm thử cơ bản của 1 trang WEB
 
 Mục Đích: Test năng hoạt động của một trang web và phần mềm Jmeter
 
-4.1. Thiết lập Thread Properties:
+HTTP request: www.fpt.com
 
-•	Number of Threads (users): Số lượng users giả lập được gửi vào trang web.
+Tham Số: Resouces, Business
 
-•	Ramp-Up Period (seconds): Thời gian gửi lượng users vào trang web.
+Number of thread (user): 1
 
-•	Loop Count: Số lần lặp.
+Ramp-up period ( seconds): 1
 
-•	Infinite: Check để lặp không giới hạn, uncheck để lặp bằng số Loop Count.
+Loop-count : 1
 
-![image](https://github.com/user-attachments/assets/5b60e454-39ea-4ae7-b57f-cd3840c6dd5b)
+Kết Quả Mong Đợi: Gửi yêu cầu thành công
 
-Trong hình đã thiết lập gửi 100 users vào trang trong vòng 10 giây, số lần lặp là 2.
+Kết Quả Thực Tế: Đã gửi yêu cầu thành công
 
-Kết quả: Tương đương gửi 200 users vào trang trong vòng 20 giây, mỗi giây sẽ gửi vào 10 users.
+Trạng Thái: Thành công
 
+Kết quả sau khi test:
 
-4.2. Cấu hình HTTP Request:
+![image](https://github.com/user-attachments/assets/bc1fb961-cb01-4956-8973-f64cdb2bb86c)
 
-Tạo một HTTP Request truy cập vào trang: http://127.0.0.1:8000/
+Thời gian phản hồi trung bình: 2 giây
 
-Kiểm tra thời gian phản hồi, tỉ lệ lỗi và khả năng xử lý request của máy chủ.
+Tỷ lệ yêu cầu thành công: 100%
 
-Để lấy API http://127.0.0.1:8000/ cần config thông tin như sau:
+Kết quả chi tiết:
 
-•	Protocol: http
+![image](https://github.com/user-attachments/assets/0146d823-1ff7-40f4-8238-aeeb579b7a71)
 
-•	Server Name or IP: 127.0.0.1
+Kịch Bản Kiểm Thử lần 2:
+Tên Kịch Bản: Kiểm thử cơ bản của 1 trang WEB
 
-•	Port Number: 8000
+Mục Đích: Test năng hoạt động của một trang web khi thay đổi biến số
 
-•	Method: GET
+HTTP request: www.fpt.com
 
-•	Path: /
+Tham Số: Resouces, Business
 
-![image](https://github.com/user-attachments/assets/b31d6c16-800f-425e-9351-b589a212394b)
+Number of thread (user): 10
 
-4.3. Kết quả chi tiết:
+Ramp-up period ( seconds): 2
 
-![image](https://github.com/user-attachments/assets/7a7b4186-bdf3-458b-8535-6123fe945da9)
+Loop-count : 10
 
-Hệ thống có khả năng xử lý yêu cầu mà không có lỗi, nhưng thời gian phản hồi trung bình cao (6.6 giây) và biến động lớn giữa các request.
+Kết Quả Mong Đợi: Gửi yêu cầu thành công
+
+Kết Quả Thực Tế: Đã gửi yêu cầu thành công
+
+Trạng Thái: Thành công
+
+Kết quả sau khi test:
+
+![image](https://github.com/user-attachments/assets/9a4e6e8a-a6ed-45d5-b869-ea41170048bd)
+
+Thời gian phản hồi trung bình: 15 giây
+
+Tỷ lệ yêu cầu thành công: 100%
+
+Kết quả chi tiết:
+
+![image](https://github.com/user-attachments/assets/58719b64-e12b-48bd-b874-f915b5b8ce1c)
+
+5. Kết quả
+
+Trang web hoạt động khá tốt, thời gian phản hồi rất nhanh và tỉ lệ thật bại rất thập ngay cả khi với nhiều người dùng vào cùng một lúc
